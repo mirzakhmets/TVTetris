@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:translationZ="-1dp"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/tetris_frame"
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/tetris"
+                android:name="com.jetgame.tetris.FragmentTetris"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                tools:layout="@layout/fragment_tetris" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/game_frame"
+        android:visibility="gone"
+        android:background="@drawable/rounded_selector"
+        android:layout_width="295dp"
+        android:layout_marginTop="155dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="305dp">
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:src="@drawable/tetrispowerlogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter" />
+
+    <RelativeLayout
+        android:id="@+id/youtube_frame"
+        android:visibility="gone"
+        android:layout_width="240dp"
+        android:layout_height="400dp"
+        android:background="@drawable/rounded_selector"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginTop="90dp"/>
+
+    <RelativeLayout
+        android:id="@+id/rectangle"
+        android:layout_width="220dp"
+        android:layout_height="380dp"
+        android:background="@drawable/rounded_rectangle"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="100dp"
+        android:padding="16dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Watch Shorts while Playing"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/selectPlatform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select a Platform:"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:layout_below="@id/title"
+            android:layout_marginTop="16dp"
+            android:gravity="start"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp" />
+
+        <RelativeLayout
+            android:id="@+id/youtube_button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectPlatform"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_selector"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:nextFocusDown="@id/placeholder_button_container"
+            android:nextFocusUp="@id/selectPlatform"
+            android:padding="8dp"
+            android:contentDescription="button2"
+            android:onClick="onButtonClick">
+
+            <ImageView
+                android:id="@+id/youtube_button"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/youtubelogo"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/placeholder_button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/youtube_button_container"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_selector"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:nextFocusUp="@id/youtube_button_container"
+            android:nextFocusDown="@id/youtube_button_container"
+            android:padding="8dp"
+            android:contentDescription="button1"
+            android:onClick="onButtonClick">
+
+            <ImageView
+                android:id="@+id/placeholder_button"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:src="@drawable/tiktoklogo"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"/>
+        </RelativeLayout>
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_rectangle"
+            android:clipToOutline="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/videoPlayerContainer"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:orientation="vertical">
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
